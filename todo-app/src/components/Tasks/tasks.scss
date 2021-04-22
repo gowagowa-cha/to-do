@@ -76,6 +76,19 @@
 
 	&__item {
 		margin-top: 20px;
+		
+
+		h2 {
+			font-family: Montserrat;
+			font-weight: bold;
+			font-size: 22px;
+			color: #c9d1d3;
+			text-align: center;
+			
+			left: 50%;
+			right: 50%;
+		}
+
 		&-row {
 			display: flex;
 			align-items: center;

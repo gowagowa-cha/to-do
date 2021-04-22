@@ -11,13 +11,13 @@
       "colorId": 4
     },
     {
-      "id": 2,
+      "id": 4,
       "name": "Фильмы и сериалы",
       "colorId": 3
     },
     {
-      "name": "Книги",
-      "colorId": 2,
+      "name": "sex",
+      "colorId": 5,
       "id": 3
     }
   ],
