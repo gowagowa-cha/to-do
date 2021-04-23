@@ -22,7 +22,26 @@ const App = () => {
   const onAddlist = (obj) => {
     const newList = [...lists, obj];
     setLists(newList);
-    console.log(newList);
+  };
+
+  const onAddTask = (listId, taskObj) => {
+    const newList = lists.map((item) => {
+      if (item.id === listId) {
+        item.tasks = [...item.tasks, taskObj];
+      }
+      return item;
+    });
+    setLists(newList);
+  };
+
+  const onEditListTitle = (id, title) => {
+    const newList = lists.map((item) => {
+      if (item.id === id) {
+        item.name = title;
+      }
+      return item;
+    });
+    setLists(newList);
   };
 
   return (
@@ -31,6 +50,7 @@ const App = () => {
         <List
           items={[
             {
+               active: true,
               icon: (
                 <svg
                   width='14'
@@ -44,7 +64,7 @@ const App = () => {
                     fill='#7C7C7C'
                   />
                 </svg>
-              ),
+              ),  
               name: 'Все задачи',
             },
           ]}
@@ -56,10 +76,10 @@ const App = () => {
               const newLists = lists.filter((item) => item.id !== id);
               setLists(newLists);
             }}
-				onClickItem={item => {
-					setActiveItem(item);
-				}}
-				activeItem={activeItem}
+            onClickItem={(item) => {
+              setActiveItem(item);
+            }}
+            activeItem={activeItem}
             isRemovable
           />
         ) : (
@@ -67,7 +87,15 @@ const App = () => {
         )}
         <AddList onAdd={onAddlist} colors={colors} />
       </div>
-      <div className='todo__tasks'>{ lists && activeItem && <Tasks list={ activeItem } />}</div>
+      <div className='todo__tasks'>
+        {lists && activeItem && (
+          <Tasks
+            onAddTask={onAddTask}
+            list={activeItem}
+            onEditTitle={onEditListTitle}
+          />
+        )}
+      </div>
     </div>
   );
 };
