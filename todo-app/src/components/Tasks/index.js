@@ -7,7 +7,7 @@ import edit from '../../assets/img/edit.svg';
 
 import './tasks.scss';
 
-const Tasks = ({ list, onEditTitle, onAddTask }) => {
+const Tasks = ({ list, onEditTitle, onAddTask, withOutEmpty }) => {
   const editTitle = () => {
     const newTitle = window.prompt('Введите название', list.name);
     if (newTitle) {
@@ -30,7 +30,7 @@ const Tasks = ({ list, onEditTitle, onAddTask }) => {
       </h2>
 
       <div className='tasks__item'>
-        {!list.tasks.length && <h2>Задачи отсутствуют</h2>}
+        {!withOutEmpty && !list.tasks.length && <h2>Задачи отсутствуют</h2>}
         {list.tasks.map((task) => (
           <div key={task.id} className='tasks__item-row'>
             <div className='checkbox'>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Route } from 'react-router-dom';
 
 import { List, AddList, Tasks } from './components';
 
@@ -50,7 +51,7 @@ const App = () => {
         <List
           items={[
             {
-               active: true,
+              active: true,
               icon: (
                 <svg
                   width='14'
@@ -64,7 +65,7 @@ const App = () => {
                     fill='#7C7C7C'
                   />
                 </svg>
-              ),  
+              ),
               name: 'Все задачи',
             },
           ]}
@@ -88,13 +89,26 @@ const App = () => {
         <AddList onAdd={onAddlist} colors={colors} />
       </div>
       <div className='todo__tasks'>
-        {lists && activeItem && (
-          <Tasks
-            onAddTask={onAddTask}
-            list={activeItem}
-            onEditTitle={onEditListTitle}
-          />
-        )}
+        <Route exact path='/'>
+          {lists &&
+            lists.map((list) => (
+              <Tasks
+                list={list}
+                onAddTask={onAddTask}
+                onEditTitle={onEditListTitle}
+					 withOutEmpty
+              />
+            ))}
+        </Route>
+        <Route path='/lists/:id'>
+          {lists && activeItem && (
+            <Tasks
+              onAddTask={onAddTask}
+              list={activeItem}
+              onEditTitle={onEditListTitle}
+            />
+          )}
+        </Route>
       </div>
     </div>
   );
