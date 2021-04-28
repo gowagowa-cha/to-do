@@ -19,6 +19,16 @@
       "name": "todo",
       "colorId": 5,
       "id": 5
+    },
+    {
+      "name": "секс",
+      "colorId": 7,
+      "id": 6
+    },
+    {
+      "name": "123",
+      "colorId": 3,
+      "id": 7
     }
   ],
   "tasks": [
@@ -26,13 +36,14 @@
       "id": 1,
       "listId": 2,
       "text": "Изучить JavaScropt",
-      "completet": false
+      "completet": true,
+      "completed": true
     },
     {
       "id": 2,
       "listId": 2,
       "text": "Изучить патерны проектировнаия",
-      "completet": false
+      "completet": true
     },
     {
       "id": 3,
@@ -44,19 +55,58 @@
       "id": 4,
       "listId": 2,
       "text": "Redux ( redux-obseverble, redux-saga )",
-      "completet": false
+      "completet": true,
+      "completed": false
     },
     {
-      "listId": 2,
-      "text": "12344",
+      "listId": 1,
+      "text": "купить патрубок охлаждения",
       "completet": false,
-      "id": 5
+      "id": 6,
+      "completed": false
     },
     {
-      "listId": 2,
-      "text": "4321",
+      "listId": 4,
+      "text": "досмотреть регулярые части",
       "completet": false,
-      "id": 6
+      "id": 7
+    },
+    {
+      "listId": 5,
+      "text": "доделать",
+      "completet": false,
+      "id": 8,
+      "completed": true
+    },
+    {
+      "listId": 1,
+      "text": "купить резинку в спортзал",
+      "completet": false,
+      "id": 9
+    },
+    {
+      "listId": 5,
+      "text": "залить на GitHub",
+      "completet": false,
+      "id": 10
+    },
+    {
+      "listId": 4,
+      "text": "Досмотреть про Доту",
+      "completet": false,
+      "id": 11
+    },
+    {
+      "listId": 6,
+      "text": "трахнуть машу",
+      "completet": false,
+      "id": 12
+    },
+    {
+      "listId": 7,
+      "text": "есть прорыв",
+      "completet": false,
+      "id": 13
     }
   ],
   "colors": [

@@ -21,7 +21,7 @@ const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }
 	return (
 		<ul onClick={onClick} className="list">
 			{
-				items.map((item, index) => 
+				items.map((item, index) => (
 					<li 
 						key={index} 
 						className={classNames(item.className, {
@@ -34,15 +34,16 @@ const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }
 							{item.name}
 							{item.tasks && `(${item.tasks.length})`}
 						</span>
-						{ isRemovable && 
+						{ isRemovable && (
 							<img 
 								onClick={() => removeList(item)}
 								className='list__remove-btn' 
-								src={removeSvg} alt="remove"
+								src={removeSvg} 
+								alt="remove"
 							/>
-						}
-					</li>)
-			}
+						)}
+					</li>
+				))}
 	</ul>
 	); 
 };
